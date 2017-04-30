@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>MQTT Dashboard</title>
+    <script
+            id="sap-ui-bootstrap"
+            src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_belize"
+            data-sap-ui-bindingSyntax="complex"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-compatVersion="edge"
+            data-sap-ui-preload="async"
+            data-sap-ui-resourceroots='{
+                "gonzalo123": "/gonzalo123"
+            }'>
+    </script>
+    <script src="http://192.168.1.104:3000/socket.io/socket.io.js"></script>
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            new sap.m.Page({
+                showHeader: false,
+                enableScrolling: false,
+                content: [new sap.ui.core.ComponentContainer({
+                    name: 'gonzalo123',
+                    height: "100%"
+                })]
+            }).placeAt("content");
+        });
+    </script>
+
+</head>
+<body class="sapUiBody" id="content">
+</body>
+</html>

@@ -1,0 +1,7 @@
+<mvc:Page
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc"
+        height="100%"
+        width="100%">
+    <App id="rootControl"/>
+</mvc:Page>

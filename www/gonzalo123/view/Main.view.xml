@@ -1,0 +1,44 @@
+<mvc:View
+        controllerName="gonzalo123.controller.Controller"
+        height="100%"
+        width="100%"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+    <IconTabBar expandable="false"
+                stretchContentHeight="true"
+                class="sapUiResponsiveContentPadding">
+        <items>
+            <IconTabFilter icon="sap-icon://bbyd-dashboard">
+                <TileContainer>
+                    <StandardTile
+                            icon="sap-icon://explorer"
+                            number="{/potentiometer}"
+                            numberUnit="%"
+                            title="{i18n>potentiometer}"/>
+                    <StandardTile
+                            icon="sap-icon://temperature"
+                            number="{/temperature}"
+                            numberUnit="ºC"
+                            title="{i18n>temperature}"/>
+                    <StandardTile
+                            icon="sap-icon://lightbulb"
+                            number="{/light/level}"
+                            title="{i18n>light}"/>
+                </TileContainer>
+            </IconTabFilter>
+            <IconTabFilter icon="sap-icon://lightbulb">
+                <Page showHeader="false"
+                      enableScrolling="true">
+                    <List>
+                        <InputListItem label="{i18n>light}">
+                            <Switch state="{/light/status}"
+                                    change="onStatusChange"/>
+                        </InputListItem>
+                    </List>
+                </Page>
+            </IconTabFilter>
+        </items>
+    </IconTabBar>
+</mvc:View>

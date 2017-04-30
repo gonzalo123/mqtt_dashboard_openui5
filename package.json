@@ -1,0 +1,15 @@
+{
+  "name": "mqtt_dashboard_openui5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gonzalo Ayuso <gonzalo123@gmail.com> (https://gonzalo123.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "mqtt": "^2.6.2",
+    "socket.io": "^1.7.3"
+  }
+}
