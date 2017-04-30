@@ -50,11 +50,9 @@ sap.ui.define([
             },
 
             onStatusChange: function () {
-                var status = this.getView().getModel().oData.light.status
-                console.log("onStatusChange", status);
                 io.emit('mqtt', {
                     topic: 'sensors/arduino/light/change',
-                    payload: (status ? "1" : "0")
+                    payload: (this.getView().getModel().oData.light.status ? "1" : "0")
                 });
             }
         });
