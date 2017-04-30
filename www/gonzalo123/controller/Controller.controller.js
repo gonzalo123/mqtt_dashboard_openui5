@@ -45,25 +45,16 @@ sap.ui.define([
                 var i18nModel = new ResourceModel({
                     bundleName: "gonzalo123.i18n.i18n"
                 });
+
                 this.getView().setModel(i18nModel, "i18n");
             },
 
-            onStatusChange: function (oEvent) {
+            onStatusChange: function () {
                 var status = this.getView().getModel().oData.light.status
                 console.log("onStatusChange", status);
                 io.emit('mqtt', {
                     topic: 'sensors/arduino/light/change',
                     payload: (status ? "1" : "0")
-                });
-            },
-
-            onColorChange: function (oEvent) {
-                var color = oEvent.getSource().data("color");
-                var value = this.getView().getModel().oData.light[color];
-                console.log(color, value);
-                io.emit('mqtt', {
-                    topic: 'sensors/arduino/light/' + color + '/change',
-                    payload: value
                 });
             }
         });

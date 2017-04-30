@@ -222,22 +222,12 @@ sap.ui.define([
                 this.getView().setModel(i18nModel, "i18n");
             },
 
-            onStatusChange: function (oEvent) {
+            onStatusChange: function () {
                 var status = this.getView().getModel().oData.light.status
                 console.log("onStatusChange", status);
                 io.emit('mqtt', {
                     topic: 'sensors/arduino/light/change',
                     payload: (status ? "1" : "0")
-                });
-            },
-
-            onColorChange: function (oEvent) {
-                var color = oEvent.getSource().data("color");
-                var value = this.getView().getModel().oData.light[color];
-                console.log(color, value);
-                io.emit('mqtt', {
-                    topic: 'sensors/arduino/light/' + color + '/change',
-                    payload: value
                 });
             }
         });
@@ -287,4 +277,4 @@ httpServer.listen(3000, '0.0.0.0');
 * pull down resistor
 
 # Demo
-[![Playing with mqtt, Arduino, Raspberry Pi and OpenUI5 ](http://img.youtube.com/vi/4cdecwQ74U4/0.jpg)](https://www.youtube.com/watch?v=4cdecwQ74U4)
+[![Playing with mqtt, Arduino, Raspberry Pi and OpenUI5](http://img.youtube.com/vi/4cdecwQ74U4/0.jpg)](https://www.youtube.com/watch?v=4cdecwQ74U4)
